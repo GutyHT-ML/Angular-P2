@@ -3,10 +3,10 @@
     <div class="col">
       <h1>Personas</h1>
       <div class="btn-group">
-        <button type="button" class="btn btn-success" (click)="show_list=false" [ngClass]="{ 'btn-success' : !show_list }">ON</button>
-        <button type="button" class="btn btn-danger" (click)="show_list=true" [ngClass]="{ 'btn-danger' : show_list }">OFF</button>
+        <button type="button" class="btn btn-success" (click)="show_list=true" [ngClass]="{ 'btn-success' : show_list }">ON</button>
+        <button type="button" class="btn btn-danger" (click)="show_list=false" [ngClass]="{ 'btn-danger' : !show_list }">OFF</button>
       </div>
-      <div class="container" [ngStyle]="{ 'display': show_list ? 'none':'unset'}">
+      <div class="container" [ngStyle]="{ 'display': show_list==false ? 'none':'unset'}">
         <ul class="list-group">
           <app-elementopersona (onPersonSelected)="doSomething($event)" [persona]='persona' *ngFor='let persona of personas'></app-elementopersona>
         </ul>
@@ -14,6 +14,8 @@
     </div>
     <div class="col">
       <h1>Persona</h1>
+      <button type="button" class="btn btn-success" (click)="show_details=true" [ngClass]="{ 'btn-success' : show_details }">ON</button>
+      <button type="button" class="btn btn-danger" (click)="show_details=false" [ngClass]="{ 'btn-danger' : !show_details }">OFF</button>
       <ul class="list-group" *ngIf="show_details" ngDefaultControl [(ngModel)]="persona">
         <li class="list-group-item">Nombre: {{persona.nombre}}</li>
         <li class="list-group-item">Edad: {{persona.edad}}</li>

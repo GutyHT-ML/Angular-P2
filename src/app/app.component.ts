@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   persona:Persona 
   public doSomething(e:Persona):void{
     this.persona = e
-    this.show_details = true
+    // this.show_details = true
     console.log("persona seleccionada", e)
     console.log("persona de clase", this.persona)
   }
