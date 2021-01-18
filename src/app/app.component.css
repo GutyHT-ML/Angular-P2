@@ -1,0 +1,12 @@
+.hidden{
+    display: none;
+}
+.shown{
+    display: unset;
+}
+.success{
+    background-color: greenyellow;
+}
+.danger{
+    background-color: red;
+}
